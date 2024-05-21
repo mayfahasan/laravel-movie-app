@@ -1,152 +1,90 @@
 @extends('_layouts.main') 
 
 @section('content')
+<!-- ===== Main Content Start ===== -->
 <main>
     <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-        <!-- Breadcrumb Start -->
-        <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                Tables
-            </h2>
+        <h2 class="mb-7.5 mt-10 text-title-md2 font-bold text-black dark:text-white">
+            Movie List
+        </h2>
 
-            <nav>
-                <a
-                    href="/movies/create"
-                    class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                >
-                    Create
-                </a>
-            </nav>
-        </div>
-        <!-- Breadcrumb End -->
-
-        <!-- ====== Table Section Start -->
-        <div class="flex flex-col gap-10">
-            <!-- ====== Table Start -->
+        <div class="grid grid-cols-1 gap-7.5 sm:grid-cols-2 xl:grid-cols-4">
             <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">ID</p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">Rating</p>
-                    </div>
-                    <div class="col-span-3 flex items-center">
-                        <p class="font-medium">Movie</p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">Date</p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">Actions</p>
-                    </div>
-                </div>
+                <a href="#" class="block px-4 pt-4">
+                    <img class="object-cover h-60 w-96" src="src/images/movie/movie-01.jpg" alt="Movies" />
+                </a>
 
-                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            1
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            8.5
-                        </p>
-                    </div>
-                    <div class="col-span-3 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <div class="w-12 rounded-md">
-                                <img src="src/images/movie/movie-01.jpg" alt="Product" />
-                            </div>
-                            <p class="text-sm font-medium text-black dark:text-white">
-                                Jojo's Bizarre Adventure
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            2024-05-15
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            2
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            9.0
-                        </p>
-                    </div>
-                    <div class="col-span-3 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <div class="w-12 rounded-md">
-                                <img src="src/images/movie/movie-02.jpg" alt="Product" />
-                            </div>
-                            <p class="text-sm font-medium text-black dark:text-white">
-                                Noragami
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            2024-04-20
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            3
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            7.8
-                        </p>
-                    </div>
-                    <div class="col-span-3 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <div class="w-12 rounded-md">
-                                <img src="src/images/movie/movie-03.jpg" alt="Product" />
-                            </div>
-                            <p class="text-sm font-medium text-black dark:text-white">
-                                Wind Breaker
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            2024-03-10
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
+                <div class="p-6 overflow-hidden">
+                    <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                        <a href="#">Jojo Adventure</a>
+                    </h4>
+                    <p class="font-medium">
+                        Jojo's Bizarre Adventure is a story about the Joestar family, who are possessed with intense psychic strength.
+                    </p>
                 </div>
             </div>
-            <!-- ====== Table End -->
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                <a href="#" class="block px-4 pt-4">
+                    <img class="object-cover h-60 w-96" src="src/images/movie/movie-02.jpg" alt="Cards" />
+                </a>
+
+                <div class="p-6 overflow-hidden">
+                    <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                        <a href="#">Noragami</a>
+                    </h4>
+                    <p class="font-medium">
+                        Noragami is an anime series that follows a poor deity named Yato, who desires to become a famous god.
+                    </p>
+                </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                <a href="#" class="block px-4 pt-4">
+                    <img class="object-cover h-60 w-96" src="src/images/movie/movie-03.jpg" alt="Cards" />
+                </a>
+
+                <div class="p-6 overflow-hidden">
+                    <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                        <a href="#">Wind Breaker</a>
+                    </h4>
+                    <p class="font-medium">
+                        Haruka Sakura wants nothing to do with weaklings—he's only interested in the strongest of the strong.
+                    </p>
+                </div>
+            </div>
+
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                <a href="#" class="block px-4 pt-4">
+                    <img class="object-cover h-60 w-96" src="src/images/movie/movie-04.jpg" alt="Cards" />
+                </a>
+
+                <div class="p-6 overflow-hidden">
+                    <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                        <a href="#">Spy x Family</a>
+                    </h4>
+                    <p class="font-medium">
+                        Corrupt politicians, frenzied nationalists and other seditious forces continue to jeopardize the thin veneer of peace.
+                    </p>
+                </div>
+            </div>
+
+            <!-- New Movie Block -->
+            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                <a href="#" class="block px-4 pt-4">
+                    <img class="object-cover h-60 w-96" src="src/images/movie/movie-05.jpg" alt="Movies" />
+                </a>
+
+                <div class="p-6 overflow-hidden">
+                    <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                        <a href="#">Attack on Titan</a>
+                    </h4>
+                    <p class="font-medium">
+                        In a world where humanity resides within enormous walled cities to protect themselves from Titans, giant humanoid creatures.
+                    </p>
+                </div>
+            </div>
         </div>
-        <!-- ====== Table Section End -->
     </div>
 </main>
 @endsection
