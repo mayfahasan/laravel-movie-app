@@ -1,4 +1,4 @@
-@extends('_layouts.main') 
+@extends('_layouts.main')
 
 @section('content')
 <main>
@@ -22,13 +22,13 @@
 
         <!-- ====== Table Section Start -->
         <div class="flex flex-col gap-10">
-            <!-- ====== Table Two Start -->
+            <!-- ====== Table Start -->
             <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+                <div class="grid grid-cols-5 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-5 md:px-6 2xl:px-7.5">
                     <div class="col-span-1 flex items-center">
                         <p class="font-medium">ID</p>
                     </div>
-                    <div class="col-span-3 items-center sm:flex">
+                    <div class="col-span-1 items-center sm:flex">
                         <p class="font-medium">Name</p>
                     </div>
                     <div class="col-span-2 flex items-center">
@@ -38,36 +38,34 @@
                         <p class="font-medium">Actions</p>
                     </div>
                 </div>
-                
-                @foreach($genres as $genre)
-                
-               
-                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">{{ $genre['id']}}</p>
-                    </div>
-                    <div class="col-span-3 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <div class="w-12 rounded-md">
-                                <img src="src/images/genre/{{ $genre['poster'] }}" alt="Product" />
+
+                @foreach ($genres as $genre)
+                    <div class="grid grid-cols-5 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-5 md:px-6 2xl:px-7.5">
+                        <div class="col-span-1 flex items-center">
+                            <p class="text-sm font-medium text-black dark:text-white">
+                                {{ $genre->id }}
+                            </p>
+                        </div>
+                        <div class="col-span-1 items-center sm:flex">
+                            <p class="text-sm font-medium text-black dark:text-white">
+                                {{ $genre->name }}
+                            </p>
+                        </div>
+                        <div class="col-span-2 flex items-center">
+                            <p class="text-sm font-medium text-black dark:text-white">
+                                {{ $genre->description }}
+                            </p>
+                        </div>
+                        <div class="col-span-1 flex items-center">
+                            <div class="flex items-center space-x-1">
+                                <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
+                                <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
                             </div>
-                            <p class="text-sm font-medium text-black dark:text-white">{{ $genre['name']}}</p>
                         </div>
                     </div>
-                    <div class="col-span-2 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">{{ $genre['description']}}</p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
                 @endforeach
             </div>
-
-            <!-- ====== Table Two End -->
+            <!-- ====== Table End -->
         </div>
         <!-- ====== Table Section End -->
     </div>

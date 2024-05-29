@@ -25,45 +25,49 @@
             <!-- ====== Table Two Start -->
             <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                 <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">ID</p>
+                    <div class="col-span-3 flex items-center">
+                        <p class="font-medium">Anime Name</p>
                     </div>
-                    <div class="col-span-3 items-center sm:flex">
-                        <p class="font-medium">Name</p>
+                    <div class="col-span-1 items-center sm:flex">
+                        <p class="font-medium">Genre</p>
                     </div>
-                    <div class="col-span-2 flex items-center">
-                        <p class="font-medium">Description</p>
+                    <div class="col-span-3 flex items-center">
+                        <p class="font-medium">Synopsis</p>
                     </div>
                     <div class="col-span-1 flex items-center">
                         <p class="font-medium">Actions</p>
                     </div>
                 </div>
-                
-                @foreach($movies as $movie)
-                
-               
-                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">{{ $movie['id']}}</p>
-                    </div>
-                    <div class="col-span-3 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <div class="w-12 rounded-md">
-                                <img src="src/images/movie/{{ $movie['poster'] }}" alt="Product" />
+
+                @foreach ($movies as $movie)
+                    <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+                        <div class="col-span-3 flex items-center">
+                            <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+                                <div class="w-12 rounded-md">
+                                    <img src="src/images/movie/{{ $movie->poster }}" alt="Product" />
+                                </div>
+                                <p class="text-sm font-medium text-black dark:text-white">
+                                    {{ $movie->title }}
+                                </p>
                             </div>
-                            <p class="text-sm font-medium text-black dark:text-white">{{ $movie['title']}}</p>
+                        </div>
+                        <div class="col-span-1 items-center sm:flex">
+                            <p class="text-sm font-medium text-black dark:text-white">
+                                {{ $movie->genre->name }}
+                            </p>
+                        </div>
+                        <div class="col-span-3 flex items-center">
+                            <p class="text-sm font-medium text-black dark:text-white">
+                                {{ $movie->synopsis }}
+                            </p>
+                        </div>
+                        <div class="col-span-1 flex items-center">
+                            <div class="flex items-center space-x-1">
+                                <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
+                                <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-span-2 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">{{ $movie['synopsis']}}</p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
                 @endforeach
             </div>
 
