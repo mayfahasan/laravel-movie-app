@@ -47,10 +47,10 @@ class MovieSeeder extends Seeder
 
         Movie::create([
             'id' => 5,
-            'title' => 'The Shining',
+            'title' => 'Attack on Titan',
             'genre_id' => 5,
             'poster' => 'movie-05.jpg',
-            'synopsis' => 'The Shining is a psychological horror film directed by Stanley Kubrick, based on Stephen King\'s novel of the same name.',
+            'synopsis' => 'In a world where humanity resides within enormous walled cities to protect themselves from Titans, giant humanoid creatures.',
         ]);
     }
 }

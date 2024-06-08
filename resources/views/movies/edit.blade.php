@@ -54,36 +54,40 @@
                 <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                         <h3 class="font-medium text-black dark:text-white">
-                            Genre Form
+                            Movie Form
                         </h3>
                     </div>
-                    <form action="/genres" method="POST">
+                    <form action="/movies/{{ $movie->id }}" method="POST">
                         @csrf
-
+                        @method('PUT')
                         <div class="p-6.5">
                             <div class="mb-4.5">
                                 <label class="mb-3 block text-sm font-medium text-black dark:text-white"> Name <span class="text-meta-1">*</span> </label>
                                 <input
-                                    id="name"
-                                    name="name"
+                                    id="title"
+                                    name="title"
+                                    value="{{$movie->title}}"
                                     type="text"
-                                    placeholder="Enter anime name"
+                                    placeholder="Enter anime title"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                 />
                             </div>
 
-                            <div class="mb-6">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white"> Description <span class="text-meta-1">*</span> </label>
-                                <textarea
-                                    id="description"
-                                    name="description"
-                                    rows="6"
-                                    placeholder="Type anime description"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                ></textarea>
-                            </div>
-                                        @foreach ($errors as $error)
-                                            <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                            <div class="mb-4.5">
+                                <label class="mb-3 block text-sm font-medium text-black dark:text-white"> Genre <span class="text-meta-1">*</span> </label>
+                                <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-transparent dark:bg-form-input">
+                                    <select
+                                        id="genre_id"
+                                        name="genre_id"
+                                        class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                        :class="isOptionSelected && 'text-black dark:text-white'"
+                                        @change="isOptionSelected = true"
+                                    >
+                                        <option value="" class="text-body">
+                                            Type your genre
+                                        </option>
+                                        @foreach ($genres as $genre)
+                                            <option value="{{ $genre->id }}" {{ $genre->id == $movie->genre_id ? 'selected' : '' }}>{{ $genre->name }}</option>
                                         @endforeach
                                     </select>
                                     <span class="absolute right-4 top-1/2 z-30 -translate-y-1/2">
@@ -99,6 +103,32 @@
                                         </svg>
                                     </span>
                                 </div>
+                            </div>
+
+                            <div class="mb-4.5">
+                                <label class="mb-3 block text-sm font-medium text-black dark:text-white"> 
+                                    Poster 
+                                    <span class="text-meta-1">*</span> 
+                                </label>
+                                <input
+                                    id="poster"
+                                    name="poster"
+                                    value="{{$movie->poster}}"
+                                    type="text"
+                                    placeholder="Enter poster link"
+                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                />
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="mb-3 block text-sm font-medium text-black dark:text-white"> Synopsis <span class="text-meta-1">*</span> </label>
+                                <textarea
+                                    id="synopsis"
+                                    name="synopsis"
+                                    rows="6"
+                                    placeholder="Type anime synopsis"
+                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                >{{$movie->synopsis}}</textarea>
                             </div>
 
                             <button type="submit" class="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">

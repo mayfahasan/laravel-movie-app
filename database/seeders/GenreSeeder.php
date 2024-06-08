@@ -33,8 +33,8 @@ class GenreSeeder extends Seeder
         ]);
 
         Genre::create([
-            'name' => 'Horror',
-            'description' => 'Horror is a genre of fiction that is intended to, or has the capacity to frighten, scare, or disgust.',
+            'name' => 'Action',
+            'description' => 'Action is a genre of fiction characterized by intense physical activity, often including violence and combat.',
         ]);
     }
 }
