@@ -27,8 +27,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/movies', MovieController::class);
-Route::resource('/genres', MovieController::class);
-Route::resource('/reviews', MovieController::class);
+Route::resource('/genres', GenreController::class);
+Route::resource('/reviews', ReviewController::class);
 
 
 
